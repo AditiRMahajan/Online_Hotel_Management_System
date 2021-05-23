@@ -1,0 +1,23 @@
+server:
+  port: 7400
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8006/eureka/
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: RESERVATION-SERVICE
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/hotels
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
