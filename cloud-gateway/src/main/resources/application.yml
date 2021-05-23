@@ -1,0 +1,56 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATEWAY
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/hotels
+  cloud:
+    gateway:
+      routes:
+      - id: ADMINISTRATION-SERVICE
+        uri: lb://ADMINISTRATION-SERVICE
+        predicates:
+        - Path=/admin/**
+        filters:
+          - name: CircuitBreaker
+            args:
+              name: fallbackCommand
+              fallbackuri: forward:/fallback/message
+      - id: RESERVATION-SERVICE
+        uri: lb://RESERVATION-SERVICE
+        predicates:
+        - Path=/receptionist/**
+        filters:
+          - name: CircuitBreaker
+            args:
+              name: fallbackCommand
+              fallbackuri: forward:/fallback/message
+      - id: Management-Service
+        uri: lb://Management-Service
+        predicates:
+        - Path=/manager/**
+        filters:
+          - name: CircuitBreaker
+            args:
+              name: fallbackCommand
+              fallbackuri: forward:/fallback/message
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8006/eureka/
+  instance:
+    hostname: localhost
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
