@@ -26,16 +26,16 @@ public class RoomServicesImpl implements RoomServices{
     public AvailableRoom searchRoom(String status) {
         logger.info("Entered Service SearchRoom()");
         List<Room> allRooms = new ArrayList<>();
-        for(var i:this.roomRepository.findAll()) {
-            if(i.getStatus().isEmpty()) {
+        for(var roomList:this.roomRepository.findAll()) {
+            if(roomList.getStatus().isEmpty()) {
                 throw new EmptyInputException("Rooms are not available!");
             }
-            else if(i.getStatus().equals(status)) {
-                allRooms.add(i);
+            else if(roomList.getStatus().equals(status)) {
+                allRooms.add(roomList);
             }
         }
-        AvailableRoom p = new AvailableRoom(allRooms);
-        return p;
+        AvailableRoom availableRoom = new AvailableRoom(allRooms);
+        return availableRoom ;
     }
     
 }

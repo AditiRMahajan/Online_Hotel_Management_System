@@ -37,17 +37,13 @@ public class PaymentServiceImpl implements PaymentService {
 
                 var make = this.reservationRepo.findByReservationid(reservationid);
 
-                if(make.getPaymentStatus().equalsIgnoreCase("paid")) {
-                    return "Payment is already done for given reservation id";
-
-                }
-                else{
-            
+                if(make.getPaymentStatus().equalsIgnoreCase("pending")) {
+                   
                 Payment pay = new Payment();   
                 Random random = new Random();
                 var random1 = random.nextInt(50-1)+1;
                 var random2 = random.nextInt(122-97)+97;
-                var transactionid = random1+Character.forDigit(10, random2);//((char)random2);
+                var transactionid = random1+((char)random2);
                 //System.out.println(transactionid);      
 
                 pay.setPaymentid(transactionid);
@@ -105,7 +101,12 @@ public class PaymentServiceImpl implements PaymentService {
             }
         
         return "Payment is successful for reservation id "+ reservationid + " with payment id: " + transactionid;
-        }
+
+                }
+                else{
+                     return "Payment is already done for given reservation id";
+            
+                }
     }
     
 }
