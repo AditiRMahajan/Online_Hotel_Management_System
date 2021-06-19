@@ -24,19 +24,19 @@ public class Inventory {
     private ObjectId _id;
 
     @Min(value = 0, message = "id should not be less than 0")
-    @NotNull(message = "Inventory id is mandatory")
+    //@NotBlank(message = "Inventory id is mandatory")
     private int inventoryId;
 
-    @NotNull(message = "Inventory name is mandatory")
+    //@NotBlank(message = "Inventory name is mandatory")
     private String inventoryName;
 
-    @NotNull(message = "Inventory type should be master/peroidic/daily")
+    //@NotBlank(message = "Inventory type should be master/peroidic/daily")
     private String category;  //master/peroidic/daily
 
-    @NotNull(message = "roomType is mandatory")
+    //@NotBlank(message = "roomType is mandatory")
     private String roomType;
 
-    @NotNull(message = "inventoryStatus is mandatory")
+    //@NotBlank(message = "inventoryStatus is mandatory")
     private String inventoryStatus;
     
 }

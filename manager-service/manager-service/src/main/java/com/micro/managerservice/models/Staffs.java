@@ -24,10 +24,10 @@ public class Staffs {
     private ObjectId _id;
 
     @Min(value = 1, message = "staffid should not be less than 1")
-    @NotNull(message = "staffid is mandatory")
+    //@NotBlank(message = "staffid is mandatory")
     private int staffid;
 
-    @NotNull(message = "staffname is mandatory")
+    //@NotBlank(message = "staffname is mandatory")
     private String staffName;
 
     @Min(value = 1, message = "staffid should not be less than 1")
@@ -39,10 +39,10 @@ public class Staffs {
     @Min(value = 1, message = "staffid should not be less than 1")
     private int staffAge;
 
-    @NotNull(message = "staffoccupation is mandatory")
+    //@NotBlank(message = "staffoccupation is mandatory")
     private String staffOccupation;
 
-    @NotNull(message = "Email is mandatory")
+    //@NotBlank(message = "Email is mandatory")
 	@Email(message = "Email should be valid")
     private String staffEmail;
 }

@@ -24,13 +24,13 @@ public class Room {
     private ObjectId _id;
 
     @Min(value = 1, message = "roomnumber should not be less than 1")
-    @NotNull(message = "roomnumber is mandatory")
+    //@NotBlank(message = "roomnumber is mandatory")
     private int roomNumber;
 
-    @NotNull(message = "roomType is mandatory")
+    //@NotBlank(message = "roomType is mandatory")
     private String roomType;
 
-    @NotNull(message = "Status is mandatory")
+    //@NotBlank(message = "Status is mandatory")
     private String status;
     
     
