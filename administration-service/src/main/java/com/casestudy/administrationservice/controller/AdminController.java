@@ -55,6 +55,7 @@ public class AdminController {
         this.adminRepository.save(admin);
         return "Data added succesfully";
     }
+    
 
     @PostMapping("/add-department")
     public String addDepartment(@RequestParam @Valid int departmentId, @RequestParam @Valid String departmentName, @RequestParam @Valid String departmentType, @RequestParam

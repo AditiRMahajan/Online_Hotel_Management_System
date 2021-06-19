@@ -24,16 +24,16 @@ public class Departments {
     private ObjectId _id;
 
     @Min(value = 0, message = "id should not be less than 1")
-    @NotNull(message = "Dept id is mandatory")
+    //@NotBlank(message = "Dept id is mandatory")
     private int departmentId;
 
-    @NotBlank(message = "Dept name is mandatory")
+    //@NotBlank(message = "Dept name is mandatory")
     private String departmentName; //housekeeping/ food n beverage service/ kitchen/ front-office, marketting, HR, accounting
     
-    @NotNull(message = "Dept type should be operational/functional")
+   // @NotBlank(message = "Dept type should be operational/functional")
     private String departmentType; //operational/functional
 
-    @NotNull(message = "Incharge name is mandatory")
+    //@NotBlank(message = "Incharge name is mandatory")
     private String departmentIncharge;
     
     

@@ -5,14 +5,5 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/hotels
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8006/eureka/
-  instance:
-    hostname: localhost
-
 server:
   port: 7006
