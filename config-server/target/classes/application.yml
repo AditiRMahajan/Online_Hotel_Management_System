@@ -1,0 +1,18 @@
+server:
+  port: 9195
+
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AditiRMahajan/HMS-Cloud-Config-Server
+          clone-on-start: true
+  profiles:   
+    active: native
+          #search-paths: 
+        #   username: adimahajan258@gmail.com
+        #   password: 
+        
